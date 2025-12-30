@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
+
 
 class HomeController extends Controller
 {
@@ -11,7 +13,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+       
+       $students = Student::all();
+       //return print_r($students);
+       
+        return view('home', ['students'=>$students, 'title'=>"All students"]);
     }
 
      public function about()
