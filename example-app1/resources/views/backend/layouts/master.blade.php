@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+@yield("head")
 
- @yield("head")
+
 <body>
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
@@ -19,410 +20,368 @@
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
-       <!-- header will include -->
-        @include ("backend.layouts.header")
+        @include("backend.layouts.header")
         <!-- ============================================================== -->
         <!-- End Topbar header -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-
-        @yield("content")
-
-        <aside class="left-sidebar">
-            <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
-                <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <!-- User Profile-->
+       @include("backend.layouts.sidebar")
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+       @yield("content")
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- customizer Panel -->
+    <!-- ============================================================== -->
+    <aside class="customizer">
+        <a href="javascript:void(0)" class="service-panel-toggle">
+            <i class="fa fa-spin fa-cog"></i>
+        </a>
+        <div class="customizer-body">
+            <ul class="nav customizer-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab
+                                   " aria-controls="pills-home" aria-selected="true">
+                        <i class="mdi mdi-wrench font-20"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#chat" role="tab
+                                   " aria-controls="chat" aria-selected="false">
+                        <i class="mdi mdi-message-reply font-20"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab
+                                   " aria-controls="pills-contact" aria-selected="false">
+                        <i class="mdi mdi-star-circle font-20"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <!-- Tab 1 -->
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="p-15 border-bottom">
+                        <!-- Sidebar -->
+                        <h5 class="font-medium m-b-10 m-t-10">Layout Settings</h5>
+                        <div class="custom-control custom-checkbox m-t-10">
+                            <input type="checkbox" class="custom-control-input" name="theme-view" id="theme-view">
+                            <label class="custom-control-label" for="theme-view">Dark Theme</label>
+                        </div>
+                        <div class="custom-control custom-checkbox m-t-10">
+                            <input type="checkbox" class="custom-control-input sidebartoggler" name="collapssidebar
+                                   " id="collapssidebar">
+                            <label class="custom-control-label" for="collapssidebar">Collapse Sidebar</label>
+                        </div>
+                        <div class="custom-control custom-checkbox m-t-10">
+                            <input type="checkbox" class="custom-control-input" name="sidebar-position" id="sidebar-position">
+                            <label class="custom-control-label" for="sidebar-position">Fixed Sidebar</label>
+                        </div>
+                        <div class="custom-control custom-checkbox m-t-10">
+                            <input type="checkbox" class="custom-control-input" name="header-position" id="header-position">
+                            <label class="custom-control-label" for="header-position">Fixed Header</label>
+                        </div>
+                        <div class="custom-control custom-checkbox m-t-10">
+                            <input type="checkbox" class="custom-control-input" name="boxed-layout" id="boxed-layout">
+                            <label class="custom-control-label" for="boxed-layout">Boxed Layout</label>
+                        </div>
+                    </div>
+                    <div class="p-15 border-bottom">
+                        <!-- Logo BG -->
+                        <h5 class="font-medium m-b-10 m-t-10">Logo Backgrounds</h5>
+                        <ul class="theme-color">
+                            <li class="theme-item">
+                                <a href="javascript:void(0)" class="theme-link" data-logobg="skin1"></a>
+                            </li>
+                            <li class="theme-item">
+                                <a href="javascript:void(0)" class="theme-link" data-logobg="skin2"></a>
+                            </li>
+                            <li class="theme-item">
+                                <a href="javascript:void(0)" class="theme-link" data-logobg="skin3"></a>
+                            </li>
+                            <li class="theme-item">
+                                <a href="javascript:void(0)" class="theme-link" data-logobg="skin4"></a>
+                            </li>
+                            <li class="theme-item">
+                                <a href="javascript:void(0)" class="theme-link" data-logobg="skin5"></a>
+                            </li>
+                            <li class="theme-item">
+                                <a href="javascript:void(0)" class="theme-link" data-logobg="skin6"></a>
+                            </li>
+                        </ul>
+                        <!-- Logo BG -->
+                    </div>
+                    <div class="p-15 border-bottom">
+                        <!-- Navbar BG -->
+                        <h5 class="font-medium m-b-10 m-t-10">Navbar Backgrounds</h5>
+                        <ul class="theme-color">
+                            <li class="theme-item">
+                                <a href="javascript:void(0)" class="theme-link" data-navbarbg="skin1"></a>
+                            </li>
+                            <li class="theme-item">
+                                <a href="javascript:void(0)" class="theme-link" data-navbarbg="skin2"></a>
+                            </li>
+                            <li class="theme-item">
+                                <a href="javascript:void(0)" class="theme-link" data-navbarbg="skin3"></a>
+                            </li>
+                            <li class="theme-item">
+                                <a href="javascript:void(0)" class="theme-link" data-navbarbg="skin4"></a>
+                            </li>
+                            <li class="theme-item">
+                                <a href="javascript:void(0)" class="theme-link" data-navbarbg="skin5"></a>
+                            </li>
+                            <li class="theme-item">
+                                <a href="javascript:void(0)" class="theme-link" data-navbarbg="skin6"></a>
+                            </li>
+                        </ul>
+                        <!-- Navbar BG -->
+                    </div>
+                    <div class="p-15 border-bottom">
+                        <!-- Logo BG -->
+                        <h5 class="font-medium m-b-10 m-t-10">Sidebar Backgrounds</h5>
+                        <ul class="theme-color">
+                            <li class="theme-item">
+                                <a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin1"></a>
+                            </li>
+                            <li class="theme-item">
+                                <a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin2"></a>
+                            </li>
+                            <li class="theme-item">
+                                <a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin3"></a>
+                            </li>
+                            <li class="theme-item">
+                                <a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin4"></a>
+                            </li>
+                            <li class="theme-item">
+                                <a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin5"></a>
+                            </li>
+                            <li class="theme-item">
+                                <a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin6"></a>
+                            </li>
+                        </ul>
+                        <!-- Logo BG -->
+                    </div>
+                </div>
+                <!-- End Tab 1 -->
+                <!-- Tab 2 -->
+                <div class="tab-pane fade" id="chat" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <ul class="mailbox list-style-none m-t-20">
                         <li>
-                            <!-- User Profile-->
-                            <div class="user-profile dropdown m-t-20">
-                                <div class="user-pic">
-                                    <img src="../../assets/images/users/1.jpg" alt="users" class="rounded-circle img-fluid" />
-                                </div>
-                                <div class="user-content hide-menu m-t-10">
-                                    <h5 class="m-b-10 user-name font-medium">Steave Jobs</h5>
-                                    <a href="javascript:void(0)" class="btn btn-circle btn-sm m-r-5" id="Userdd" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        <i class="ti-settings"></i>
-                                    </a>
-                                    <a href="javascript:void(0)" title="Logout" class="btn btn-circle btn-sm">
-                                        <i class="ti-power-off"></i>
-                                    </a>
-                                    <div class="dropdown-menu animated flipInY" aria-labelledby="Userdd">
-                                        <a class="dropdown-item" href="javascript:void(0)">
-                                            <i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
-                                        <a class="dropdown-item" href="javascript:void(0)">
-                                            <i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
-                                        <a class="dropdown-item" href="javascript:void(0)">
-                                            <i class="ti-email m-r-5 m-l-5"></i> Inbox</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="javascript:void(0)">
-                                            <i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="javascript:void(0)">
-                                            <i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
+                            <div class="message-center chat-scroll">
+                                <a href="javascript:void(0)" class="message-item" id='chat_user_1' data-user-id='1'>
+                                    <span class="user-img">
+                                        <img src="../../assets/images/users/1.jpg" alt="user" class="rounded-circle">
+                                        <span class="profile-status online pull-right"></span>
+                                    </span>
+                                    <div class="mail-contnet">
+                                        <h5 class="message-title">Pavan kumar</h5>
+                                        <span class="mail-desc">Just see the my admin!</span>
+                                        <span class="time">9:30 AM</span>
                                     </div>
-                                </div>
+                                </a>
+                                <!-- Message -->
+                                <a href="javascript:void(0)" class="message-item" id='chat_user_2' data-user-id='2'>
+                                    <span class="user-img">
+                                        <img src="../../assets/images/users/2.jpg" alt="user" class="rounded-circle">
+                                        <span class="profile-status busy pull-right"></span>
+                                    </span>
+                                    <div class="mail-contnet">
+                                        <h5 class="message-title">Sonu Nigam</h5>
+                                        <span class="mail-desc">I've sung a song! See you at</span>
+                                        <span class="time">9:10 AM</span>
+                                    </div>
+                                </a>
+                                <!-- Message -->
+                                <a href="javascript:void(0)" class="message-item" id='chat_user_3' data-user-id='3'>
+                                    <span class="user-img">
+                                        <img src="../../assets/images/users/3.jpg" alt="user" class="rounded-circle">
+                                        <span class="profile-status away pull-right"></span>
+                                    </span>
+                                    <div class="mail-contnet">
+                                        <h5 class="message-title">Arijit Sinh</h5>
+                                        <span class="mail-desc">I am a singer!</span>
+                                        <span class="time">9:08 AM</span>
+                                    </div>
+                                </a>
+                                <!-- Message -->
+                                <a href="javascript:void(0)" class="message-item" id='chat_user_4' data-user-id='4'>
+                                    <span class="user-img">
+                                        <img src="../../assets/images/users/4.jpg" alt="user" class="rounded-circle">
+                                        <span class="profile-status offline pull-right"></span>
+                                    </span>
+                                    <div class="mail-contnet">
+                                        <h5 class="message-title">Nirav Joshi</h5>
+                                        <span class="mail-desc">Just see the my admin!</span>
+                                        <span class="time">9:02 AM</span>
+                                    </div>
+                                </a>
+                                <!-- Message -->
+                                <!-- Message -->
+                                <a href="javascript:void(0)" class="message-item" id='chat_user_5' data-user-id='5'>
+                                    <span class="user-img">
+                                        <img src="../../assets/images/users/5.jpg" alt="user" class="rounded-circle">
+                                        <span class="profile-status offline pull-right"></span>
+                                    </span>
+                                    <div class="mail-contnet">
+                                        <h5 class="message-title">Sunil Joshi</h5>
+                                        <span class="mail-desc">Just see the my admin!</span>
+                                        <span class="time">9:02 AM</span>
+                                    </div>
+                                </a>
+                                <!-- Message -->
+                                <!-- Message -->
+                                <a href="javascript:void(0)" class="message-item" id='chat_user_6' data-user-id='6'>
+                                    <span class="user-img">
+                                        <img src="../../assets/images/users/6.jpg" alt="user" class="rounded-circle">
+                                        <span class="profile-status offline pull-right"></span>
+                                    </span>
+                                    <div class="mail-contnet">
+                                        <h5 class="message-title">Akshay Kumar</h5>
+                                        <span class="mail-desc">Just see the my admin!</span>
+                                        <span class="time">9:02 AM</span>
+                                    </div>
+                                </a>
+                                <!-- Message -->
+                                <!-- Message -->
+                                <a href="javascript:void(0)" class="message-item" id='chat_user_7' data-user-id='7'>
+                                    <span class="user-img">
+                                        <img src="../../assets/images/users/7.jpg" alt="user" class="rounded-circle">
+                                        <span class="profile-status offline pull-right"></span>
+                                    </span>
+                                    <div class="mail-contnet">
+                                        <h5 class="message-title">Pavan kumar</h5>
+                                        <span class="mail-desc">Just see the my admin!</span>
+                                        <span class="time">9:02 AM</span>
+                                    </div>
+                                </a>
+                                <!-- Message -->
+                                <!-- Message -->
+                                <a href="javascript:void(0)" class="message-item" id='chat_user_8' data-user-id='8'>
+                                    <span class="user-img">
+                                        <img src="../../assets/images/users/8.jpg" alt="user" class="rounded-circle">
+                                        <span class="profile-status offline pull-right"></span>
+                                    </span>
+                                    <div class="mail-contnet">
+                                        <h5 class="message-title">Varun Dhavan</h5>
+                                        <span class="mail-desc">Just see the my admin!</span>
+                                        <span class="time">9:02 AM</span>
+                                    </div>
+                                </a>
+                                <!-- Message -->
                             </div>
-                            <!-- End User Profile-->
                         </li>
-                        <!-- User Profile-->
-                        <li class="nav-small-cap">
-                            <i class="mdi mdi-dots-horizontal"></i>
-                            <span class="hide-menu">Personal</span>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="icon-Car-Wheel"></i>
-                                <span class="hide-menu">Dashboards </span>
-                            </a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="index.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Dashboard 1 </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index2.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Dashboard 2 </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index3.html" class="sidebar-link">
-                                        <i class="icon-Record"></i>
-                                        <span class="hide-menu"> Dashboard 3 </span>
-                                    </a>
-                                </li>
+                    </ul>
+                </div>
+                <!-- End Tab 2 -->
+                <!-- Tab 3 -->
+                <div class="tab-pane fade p-15" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <h6 class="m-t-20 m-b-20">Activity Timeline</h6>
+                    <div class="steamline">
+                        <div class="sl-item">
+                            <div class="sl-left bg-success">
+                                <i class="ti-user"></i>
+                            </div>
+                            <div class="sl-right">
+                                <div class="font-medium">Meeting today
+                                    <span class="sl-date"> 5pm</span>
+                                </div>
+                                <div class="desc">you can write anything </div>
+                            </div>
+                        </div>
+                        <div class="sl-item">
+                            <div class="sl-left bg-info">
+                                <i class="fas fa-image"></i>
+                            </div>
+                            <div class="sl-right">
+                                <div class="font-medium">Send documents to Clark</div>
+                                <div class="desc">Lorem Ipsum is simply </div>
+                            </div>
+                        </div>
+                        <div class="sl-item">
+                            <div class="sl-left">
+                                <img class="rounded-circle" alt="user" src="../../assets/images/users/2.jpg"> </div>
+                            <div class="sl-right">
+                                <div class="font-medium">Go to the Doctor
+                                    <span class="sl-date">5 minutes ago</span>
+                                </div>
+                                <div class="desc">Contrary to popular belief</div>
+                            </div>
+                        </div>
+                        <div class="sl-item">
+                            <div class="sl-left">
+                                <img class="rounded-circle" alt="user" src="../../assets/images/users/1.jpg"> </div>
+                            <div class="sl-right">
+                                <div>
+                                    <a href="javascript:void(0)">Stephen</a>
+                                    <span class="sl-date">5 minutes ago</span>
+                                </div>
+                                <div class="desc">Approve meeting with tiger</div>
+                            </div>
+                        </div>
+                        <div class="sl-item">
+                            <div class="sl-left bg-primary">
+                                <i class="ti-user"></i>
+                            </div>
+                            <div class="sl-right">
+                                <div class="font-medium">Meeting today
+                                    <span class="sl-date"> 5pm</span>
+                                </div>
+                                <div class="desc">you can write anything </div>
+                            </div>
+                        </div>
+                        <div class="sl-item">
+                            <div class="sl-left bg-info">
+                                <i class="fas fa-image"></i>
+                            </div>
+                            <div class="sl-right">
+                                <div class="font-medium">Send documents to Clark</div>
+                                <div class="desc">Lorem Ipsum is simply </div>
+                            </div>
+                        </div>
+                        <div class="sl-item">
+                            <div class="sl-left">
+                                <img class="rounded-circle" alt="user" src="../../assets/images/users/4.jpg"> </div>
+                            <div class="sl-right">
+                                <div class="font-medium">Go to the Doctor
+                                    <span class="sl-date">5 minutes ago</span>
+                                </div>
+                                <div class="desc">Contrary to popular belief</div>
+                            </div>
+                        </div>
+                        <div class="sl-item">
+                            <div class="sl-left">
+                                <img class="rounded-circle" alt="user" src="../../assets/images/users/6.jpg"> </div>
+                            <div class="sl-right">
+                                <div>
+                                    <a href="javascript:void(0)">Stephen</a>
+                                    <span class="sl-date">5 minutes ago</span>
+                                </div>
+                                <div class="desc">Approve meeting with tiger</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Tab 3 -->
+            </div>
+        </div>
+    </aside>
+    <div class="chat-windows"></div>
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    @yield("script")
+</body>
 
-                            </ul>
-                        </li>
-
-                        <li class="nav-small-cap">
-                            <i class="mdi mdi-dots-horizontal"></i>
-                            <span class="hide-menu">Apps</span>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="icon-Mailbox-Empty"></i>
-                                <span class="hide-menu">Inbox </span>
-                            </a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="inbox-email.html" class="sidebar-link">
-                                        <i class="mdi mdi-email"></i>
-                                        <span class="hide-menu"> Email </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="inbox-email-detail.html" class="sidebar-link">
-                                        <i class="mdi mdi-email-alert"></i>
-                                        <span class="hide-menu"> Email Detail </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="inbox-email-compose.html" class="sidebar-link">
-                                        <i class="mdi mdi-email-secure"></i>
-                                        <span class="hide-menu"> Email Compose </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="icon-Ticket"></i>
-                                <span class="hide-menu">Ticket </span>
-                            </a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="ticket-list.html" class="sidebar-link">
-                                        <i class="mdi mdi-book-multiple"></i>
-                                        <span class="hide-menu"> Ticket List </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="ticket-detail.html" class="sidebar-link">
-                                        <i class="mdi mdi-book-plus"></i>
-                                        <span class="hide-menu"> Ticket Detail </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="icon-Sunglasses-Smiley"></i>
-                                <span class="hide-menu">Extra </span>
-                            </a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="app-chats.html" class="sidebar-link">
-                                        <i class="mdi mdi-comment-processing-outline"></i>
-                                        <span class="hide-menu"> Chats Apps </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="app-calendar.html" class="sidebar-link">
-                                        <i class="mdi mdi-calendar"></i>
-                                        <span class="hide-menu"> Calender </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="app-taskboard.html" class="sidebar-link">
-                                        <i class="mdi mdi-bulletin-board"></i>
-                                        <span class="hide-menu"> Taskboard </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-small-cap">
-                            <i class="mdi mdi-dots-horizontal"></i>
-                            <span class="hide-menu">UI</span>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="icon-Paint-Brush"></i>
-                                <span class="hide-menu">Ui Elements </span>
-                            </a>
-                            <ul aria-expanded="false" class="collapse first-level">
-                                <li class="sidebar-item">
-                                    <a href="ui-buttons.html" class="sidebar-link">
-                                        <i class="mdi mdi-toggle-switch"></i>
-                                        <span class="hide-menu"> Buttons</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="ui-modals.html" class="sidebar-link">
-                                        <i class="mdi mdi-tablet"></i>
-                                        <span class="hide-menu"> Modals</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="ui-tab.html" class="sidebar-link">
-                                        <i class="mdi mdi-sort-variant"></i>
-                                        <span class="hide-menu"> Tab</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="ui-tooltip-popover.html" class="sidebar-link">
-                                        <i class="mdi mdi-image-filter-vintage"></i>
-                                        <span class="hide-menu"> Tooltip &amp; Popover</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="ui-notification.html" class="sidebar-link">
-                                        <i class="mdi mdi-message-bulleted"></i>
-                                        <span class="hide-menu"> Notification</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="ui-progressbar.html" class="sidebar-link">
-                                        <i class="mdi mdi-poll"></i>
-                                        <span class="hide-menu"> Progressbar</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="ui-typography.html" class="sidebar-link">
-                                        <i class="mdi mdi-format-line-spacing"></i>
-                                        <span class="hide-menu"> Typography</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="ui-bootstrap.html" class="sidebar-link">
-                                        <i class="mdi mdi-bootstrap"></i>
-                                        <span class="hide-menu"> Bootstrap Ui</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="ui-breadcrumb.html" class="sidebar-link">
-                                        <i class="mdi mdi-equal"></i>
-                                        <span class="hide-menu"> Breadcrumb</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="ui-list-media.html" class="sidebar-link">
-                                        <i class="mdi mdi-file-video"></i>
-                                        <span class="hide-menu"> List Media</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="ui-grid.html" class="sidebar-link">
-                                        <i class="mdi mdi-view-module"></i>
-                                        <span class="hide-menu"> Grid</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="ui-carousel.html" class="sidebar-link">
-                                        <i class="mdi mdi-view-carousel"></i>
-                                        <span class="hide-menu"> Carousel</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="ui-scrollspy.html" class="sidebar-link">
-                                        <i class="mdi mdi-application"></i>
-                                        <span class="hide-menu"> Scrollspy</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="ui-toasts.html" class="sidebar-link">
-                                        <i class="mdi mdi-application"></i>
-                                        <span class="hide-menu"> Toasts</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="ui-spinner.html" class="sidebar-link">
-                                        <i class="mdi mdi-apple-safari"></i>
-                                        <span class="hide-menu"> Spinner</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="icon-Folder-Add"></i>
-                                <span class="hide-menu">Cards</span>
-                            </a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="ui-cards.html" class="sidebar-link">
-                                        <i class="mdi mdi-layers"></i>
-                                        <span class="hide-menu"> Basic Cards</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="ui-card-customs.html" class="sidebar-link">
-                                        <i class="mdi mdi-credit-card-scan"></i>
-                                        <span class="hide-menu">Custom Cards</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="ui-card-weather.html" class="sidebar-link">
-                                        <i class="mdi mdi-weather-fog"></i>
-                                        <span class="hide-menu">Weather Cards</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="ui-card-draggable.html" class="sidebar-link">
-                                        <i class="mdi mdi-bandcamp"></i>
-                                        <span class="hide-menu">Draggable Cards</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="icon-Idea-5"></i>
-                                <span class="hide-menu">Components</span>
-                            </a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="component-sweetalert.html" class="sidebar-link">
-                                        <i class="mdi mdi-layers"></i>
-                                        <span class="hide-menu"> Sweet Alert</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="component-nestable.html" class="sidebar-link">
-                                        <i class="mdi mdi-credit-card-scan"></i>
-                                        <span class="hide-menu">Nestable</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="component-noui-slider.html" class="sidebar-link">
-                                        <i class="mdi mdi-weather-fog"></i>
-                                        <span class="hide-menu">Noui slider</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="component-rating.html" class="sidebar-link">
-                                        <i class="mdi mdi-bandcamp"></i>
-                                        <span class="hide-menu">Rating</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="component-toastr.html" class="sidebar-link">
-                                        <i class="mdi mdi-poll"></i>
-                                        <span class="hide-menu">Toastr</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="icon-Wrench"></i>
-                                <span class="hide-menu">Widgets </span>
-                            </a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="widgets-apps.html" class="sidebar-link">
-                                        <i class="mdi mdi-comment-processing-outline"></i>
-                                        <span class="hide-menu"> Apps Widgets </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="widgets-data.html" class="sidebar-link">
-                                        <i class="mdi mdi-calendar"></i>
-                                        <span class="hide-menu"> Data Widgets </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="widgets-charts.html" class="sidebar-link">
-                                        <i class="mdi mdi-bulletin-board"></i>
-                                        <span class="hide-menu"> Charts Widgets</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="icon-Sidebar-Window"></i>
-                                <span class="hide-menu">Sidebar Type </span>
-                            </a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="sidebar-type-minisidebar.html" class="sidebar-link">
-                                        <i class="mdi mdi-view-quilt"></i>
-                                        <span class="hide-menu"> Minisidebar </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="sidebar-type-iconsidebar.html" class="sidebar-link">
-                                        <i class="mdi mdi-view-parallel"></i>
-                                        <span class="hide-menu"> Icon Sidebar </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="sidebar-type-overlaysidebar.html" class="sidebar-link">
-                                        <i class="mdi mdi-view-day"></i>
-                                        <span class="hide-menu"> Overlay Sidebar </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="sidebar-type-fullsidebar.html" class="sidebar-link">
-                                        <i class="mdi mdi-view-array"></i>
-                                        <span class="hide-menu"> Full Sidebar </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="sidebar-type-horizontalsidebar.html" class="sidebar-link">
-                                        <i class="mdi mdi-view-module"></i>
-                                        <span class="hide-menu"> Horizontal Sidebar </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="icon-Files"></i>
-                                <span class="hide-menu">Page Layouts </span>
-                            </a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="layout-inner-fixed-left-sidebar.html" class="sidebar-link">
-                                        <i class="mdi mdi-format-align-left"></i>
-                                        <span class="hide-menu"> Inner Fixed Left Sidebar </span>
-                                    </a>
+</html>
